@@ -3,8 +3,7 @@ CXX = clang
 
 CFLAGS = -Wall -Wextra -Wpedantic 
 
-vpath %.c src
-vpath %.h include
+vpath % src
 
 # .PHONY all
 
