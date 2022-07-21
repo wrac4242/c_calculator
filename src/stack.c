@@ -1,6 +1,7 @@
 #include "stack.h"
 
 #include <stdlib.h>
+#include <stdio.h>
 
 node_t *createNode(int startingVal) {
 	node_t *n = malloc(sizeof(node_t));
@@ -16,7 +17,7 @@ void stackPush(node_t *head, int toPush) {
 }
 
 int stackPop(node_t *head){ 
-	if (head == NULL) { return 0; }
+	if (head == NULL) { printf("error, value is not there, pop\n"); return 0; }
 	int to_ret = head->value;
 	node_t *old = head;
 	head = old->next;
