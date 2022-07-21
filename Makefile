@@ -1,4 +1,5 @@
-CC = gcc
+CXX = g++
+CC = g++
 
 CFLAGS = -Wall -Wextra -Wpedantic 
 
@@ -10,7 +11,11 @@ vpath % src
 
 # .PHONY all
 
-all: calculator
+all: main
 
 
-calculator: calculator.o stack.o
+calculator: main.o
+
+clean:
+	$(RM) *.o
+	$(RM) main
