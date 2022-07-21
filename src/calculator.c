@@ -19,47 +19,46 @@ int main() {
     node_t *head = NULL;
 
     while (looping) {
-        printf("add, sub, mul, div, exit, top, or the number to add: ");
+        printf("add, sub, mul, div, exit, peak, swap, pop, or the number to add: ");
         char input[50];
         fgets(input, sizeof(input), stdin);
-        printf("%s", input);
         if (!strcmp(input, "add\n")) {
-            printf("+\n");
-            int a = stackPop(head);
-            int b = stackPop(head);
-            stackPush(head, a+b);
+            int a = stackPop(&head);
+            int b = stackPop(&head);
+            stackPush(&head, a+b);
         } else if (!strcmp(input, "sub\n")) {
-            printf("-\n");
-            int a = stackPop(head);
-            int b = stackPop(head);
-            stackPush(head, a-b);
+            int a = stackPop(&head);
+            int b = stackPop(&head);
+            stackPush(&head, a-b);
         } else if (!strcmp(input, "mul\n")) {
-            printf("*\n");
-            int a = stackPop(head);
-            int b = stackPop(head);
-            stackPush(head, a*b);
+            int a = stackPop(&head);
+            int b = stackPop(&head);
+            stackPush(&head, a*b);
         } else if (!strcmp(input, "div\n")) {
-            printf("/\n");
-            int a = stackPop(head);
-            int b = stackPop(head);
-            stackPush(head, a/b);
+            int a = stackPop(&head);
+            int b = stackPop(&head);
+            stackPush(&head, a/b);
         } else if (!strcmp(input, "exit\n")) {
-            printf("looping finished");
             looping = 0;
-        } else if (!strcmp(input, "top\n")) {
+        } else if (!strcmp(input, "peak\n")) {
             if (head == NULL) { 
                 printf("error, value is not there\n"); 
             } else {
                 printf("top of the stack: %i\n", head->value);
             }
+        } else if (!strcmp(input, "swap\n")) {
+            int a = stackPop(&head);
+            int b = stackPop(&head);
+            stackPush(&head, a);
+            stackPush(&head, b);
+        } else if (!strcmp(input, "pop\n")) {
+            printf("popped off: %i\n", stackPop(&head));
         } else {
-            printf("adding num\n");
             int num = atoi(input);
-            stackPush(head, num);
+            stackPush(&head, num);
         }
-    }
-
-    freeStack(head);
+    } 
+    freeStack(&head);
     
     return 0;
 }

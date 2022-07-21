@@ -1,7 +1,10 @@
-CC = clang
-CXX = clang
+CC = gcc
 
 CFLAGS = -Wall -Wextra -Wpedantic 
+
+# debugging flags
+CFLAGS += -g -O0
+LDFLAGS += $(CFLAGS)
 
 vpath % src
 
