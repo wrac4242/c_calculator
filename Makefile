@@ -10,6 +10,4 @@ vpath % src
 all: calculator
 
 
-calculator: calculator.o
-
-calculator.o: calculator.c
+calculator: calculator.o stack.o

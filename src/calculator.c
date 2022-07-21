@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdio_ext.h>
+#include "stack.h"
 
 struct node  {
     int value;
@@ -20,7 +21,7 @@ typedef struct node node_t;
 
 
 int main() {
-    float a, b;
+    /* float a, b;
     printf("Please Enter your two floats in the format 'a b': ");
     scanf("%f %f", &a, &b);
     printf("add+, sub-, mul*, div/: ");
@@ -39,7 +40,8 @@ int main() {
         printf("%f", a/b);
     } else {
         printf("not valid");
-    }
+    } */
+    test();
     
     return 0;
 }
