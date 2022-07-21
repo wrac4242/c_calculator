@@ -16,6 +16,7 @@ void stackPush(node_t *head, int toPush) {
 }
 
 int stackPop(node_t *head){ 
+	if (head == NULL) { return 0; }
 	int to_ret = head->value;
 	node_t *old = head;
 	head = old->next;
