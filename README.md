@@ -1,2 +1,6 @@
-# c_calculator
-calculator made using C
+# cpp_calculator
+Calculator but *c++*
+
+**reject malloc embace new** 
+
+uwu
