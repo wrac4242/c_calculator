@@ -5,6 +5,7 @@ CFLAGS = -Wall -Wextra -Wpedantic
 
 # debugging flags
 CFLAGS += -g -O0
+CXXFLAGS += -g -O0 -std=c++20
 LDFLAGS += $(CFLAGS)
 
 vpath % src
