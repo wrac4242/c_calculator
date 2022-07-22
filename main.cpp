@@ -80,7 +80,7 @@ int main()
         }
         else if (input == "exit")
         {
-            working = false;//might as well use break; tbh
+            working = false;
         }
         else if (input == "peak")
         {

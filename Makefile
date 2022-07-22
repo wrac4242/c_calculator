@@ -2,6 +2,7 @@ CXX = g++
 CC = g++
 
 CFLAGS = -Wall -Wextra -Wpedantic 
+CXXFLAGS = -Wall -Wextra -Wpedantic 
 
 # debugging flags
 CFLAGS += -g -O0
