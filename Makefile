@@ -1,18 +1,14 @@
 CXX = g++
 CC = g++
 
-#purely for convinience, this way main source file can stay consistent with c/c++ ideology while letting the app have it's name
-APP_NAME = ccalc
 CFLAGS = -Wall -Wextra -Wpedantic 
 
 # debugging flags
-CFLAGS += -g -O0 -o $(APP_NAME)
-CXXFLAGS += -g -O -o $(APP_NAME)
+CFLAGS += -g -O0
+CXXFLAGS += -g -O0
 LDFLAGS += $(CFLAGS)
 
-vpath % src
-
-.PHONY clean
+.PHONY: clean
 
 all: main
 
