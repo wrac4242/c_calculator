@@ -15,7 +15,7 @@ vpath % src
 all: main
 
 
-calculator: main.o
+main: main.o
 
 clean:
 	$(RM) *.o
