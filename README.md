@@ -1,6 +1,4 @@
 # cpp_calculator
-Calculator but *c++*
+C calculator thing but rewritten in c++ to allow of usage of c++ standard library instead of using outdated language
 
-**reject malloc embace new** 
-
-uwu
+uwu owo uvu ovo

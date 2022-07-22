@@ -1,10 +1,9 @@
 #include <iostream>
 #include <string>
 #include <stack>
-#include <vector>
 
 /**
- * @brief Get and pop last two items on the stack
+ * @brief Get and pop last two items on the stack. This is done because std::stack::pop does not return value that is removed
  *
  * @param stack
  * @param a
@@ -20,16 +19,15 @@ void getTwoTopItems(std::stack<int> &stack, int &a, int &b)
 
 int main()
 {
+    //stack with the actual values
     std::stack<int> stack = std::stack<int>();
+    //simple flag to allow exiting from the app
     bool working = true;
+    //input string that will be written into by user each iteration
     std::string input;
-
-    std::vector<std::string> options = std::vector<std::string>{"add", "sub", "mul", "div", "exit", "peak", "swap", "pop"};
-
     std::cout << "add, sub, mul, div, exit, peak, swap, pop, or the number to add: " << std::endl;
-    do
+    while (working)
     {
-
         std::cin >> input;
         int a, b;
         if (input == "add")
@@ -82,7 +80,7 @@ int main()
         }
         else if (input == "exit")
         {
-            working = false;
+            working = false;//might as well use break; tbh
         }
         else if (input == "peak")
         {
@@ -110,7 +108,7 @@ int main()
         }
         else if (input == "pop")
         {
-            if (stack.size() > 0)
+            if (!stack.empty())
             {
                 std::cout << "popped: " << stack.top() << std::endl;
                 stack.pop();
@@ -124,6 +122,9 @@ int main()
         {
             stack.push(std::stoi(input));
         }
-    } while (working);
+
+        // Move to next line to avoid possible text squashing
+        std::cout << std::endl;
+    }
     return EXIT_SUCCESS;
 }
