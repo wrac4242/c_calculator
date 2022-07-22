@@ -19,11 +19,11 @@ void getTwoTopItems(std::stack<int> &stack, int &a, int &b)
 
 int main()
 {
-    //stack with the actual values
+    // stack with the actual values
     std::stack<int> stack = std::stack<int>();
-    //simple flag to allow exiting from the app
+    // simple flag to allow exiting from the app
     bool working = true;
-    //input string that will be written into by user each iteration
+    // input string that will be written into by user each iteration
     std::string input;
     std::cout << "add, sub, mul, div, exit, peak, swap, pop, or the number to add: " << std::endl;
     while (working)
@@ -84,13 +84,13 @@ int main()
         }
         else if (input == "peak")
         {
-            if (!stack.empty())
+            if (stack.empty())
             {
-                std::cout << stack.top() << std::endl;
+                std::cout << "Nothing to peek at" << std::endl;
             }
             else
             {
-                std::cout << "Nothing to peek at" << std::endl;
+                std::cout << stack.top() << std::endl;
             }
         }
         else if (input == "swap")
@@ -108,14 +108,14 @@ int main()
         }
         else if (input == "pop")
         {
-            if (!stack.empty())
+            if (stack.empty())
             {
-                std::cout << "popped: " << stack.top() << std::endl;
-                stack.pop();
+                std::cout << "Nothing to pop" << std::endl;
             }
             else
             {
-                std::cout << "Nothing to pop" << std::endl;
+                std::cout << "popped: " << stack.top() << std::endl;
+                stack.pop();
             }
         }
         else
