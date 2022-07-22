@@ -84,7 +84,7 @@ int main()
         }
         else if (input == "peak")
         {
-            if (stack.size() > 0)
+            if (!stack.empty())
             {
                 std::cout << stack.top() << std::endl;
             }
