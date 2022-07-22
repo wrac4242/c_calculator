@@ -1,16 +1,20 @@
-CC = gcc
+CXX = g++
+CC = g++
 
 CFLAGS = -Wall -Wextra -Wpedantic 
+CXXFLAGS = -Wall -Wextra -Wpedantic 
 
 # debugging flags
 CFLAGS += -g -O0
+CXXFLAGS += -g -O0
 LDFLAGS += $(CFLAGS)
 
-vpath % src
+.PHONY: clean
 
-# .PHONY all
+all: main
 
-all: calculator
+main: main.o
 
-
-calculator: calculator.o stack.o
+clean:
+	$(RM) *.o
+	$(RM) ccalc
